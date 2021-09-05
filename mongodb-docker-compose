@@ -1,0 +1,26 @@
+version: '2'
+services:
+  node00:
+      image: khezen/mongo:slim
+      container_name: mongodb_node00
+      environment:
+        RS_NAME: rs01
+        STORAGE_ENGINE: rocksdb
+        REQUIRE_SSL: 'n'
+        SHARD_SVR: 'y'
+        # MASTER: rs3
+        # SLAVES: rs1 rs2
+        DB_NAME: graylog
+        AUTH: 'n'
+      extra_hosts:
+        - "node00:172.31.22.13"
+        - "node01:172.31.30.54"
+        - "node02:172.31.28.4"
+      volumes:
+        - node00:/data/db
+      ports:
+        - "27017:27017"
+      restart: always
+volumes:
+  node00:
+    driver: local
