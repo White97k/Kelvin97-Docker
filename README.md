@@ -1,12 +1,18 @@
-# Docker
-my Docker
-
 # **Install docker compose (linux)**
 
-- sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o **/usr/local/bin/docker-compose**
-- sudo chmod +x /usr/local/bin/docker-compose
-- sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
-- docker-compose --version
+`sudo curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose`
+
+Install with **latest version** docker compose
+
+`sudo chmod +x /usr/local/bin/docker-compose`
+
+Give **execute** permission to it
+
+`sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose`
+`docker-compose --version`
+
+Create a **soft link** to /usr/bin/ path
+
 
 `docker-compose up -d`
 
